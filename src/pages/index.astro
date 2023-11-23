@@ -1,0 +1,471 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import logo from "../assets/thinkRedLogo.png";
+import stackPaper from "../assets/stackedCards.png";
+import pdev from "../assets/product.jpeg";
+import profilePic from "../assets/avatar.webp";
+import riginProfile from "../assets/riginProfile.jpeg";
+import nileshProfile from "../assets/nileshProfile.jpeg";
+import sayakProfile from "../assets/sayakProfile.jpeg";
+import mayurProfile from "../assets/mayurProfile.jpeg"
+import apaas from "../assets/apaas.webp"
+import gdb from "../assets/graphicDesign.avif"
+import tc from "../assets/tc.png"
+import cloud from "../assets/cloud.png"
+import "../assets/fonts/fonts.css";
+import "../scripts/scriptForHomepage.ts";
+import dotenv from 'dotenv'
+const key = import.meta.env;
+const transporter = nodemailer.createTransport({
+   host: 'smtp.gmail.com',
+   port: 465,
+   secure: true,
+   auth: {
+    type: 'OAuth2',
+    user: key.client_email,  // Your email address
+    serviceClient: key.client_id,
+    privateKey: key.private_key,
+    accessUrl: key.token_uri
+   }
+})
+// Start nodemailer code
+import nodemailer from 'nodemailer'
+
+if (Astro.request.method === "POST") {
+  
+  try {
+    // Verify your transporter
+    await transporter.verify()
+
+    const mailOptions = {
+      from: 'hello@thinkred.tech', // sender address
+      to: "ojas@thinkred.tech", // list of receivers
+      subject: "Hello ✔", // Subject line
+      text: "Hello world?", // plain text body
+      html: "<b>Hello world?</b>", // html body
+    }
+
+    const info = await transporter.sendMail(mailOptions)
+    
+    console.log(`Message sent: ${info.messageId}`)
+
+  } catch (error) {
+    console.log(error)
+  }
+}
+// End nodemailer code
+// Component Imports
+import Expertise from '../components/expertise.svelte';
+---
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<Layout title='Home'>
+  <div class="row header" id="home">
+    <div class="col-md-6 d-flex align-items-center justify-content-between hide-social">
+      <Image class="header-img img-fluid" src={logo} alt="logo" />
+    </div>
+    <!-- <div class=" col-md-6 d-flex justify-content-end  hide-social">
+      <nav class="social">
+          <ul>
+            <li><a href="https://twitter.com/highflyer910">Twitter <i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="https://github.com/highflyer910">Github <i class="fa fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/teonamushambadze">Linkedin <i class="fa fa-linkedin"></i></a></li>        
+          </ul>      
+      </nav>
+    </div> -->
+    <div class="col-md-12 d-flex align-items-center justify-content-between display-ham">
+      <Image class="header-img img-fluid" src={logo} alt="logo" />
+      <span class="me-2 text-danger display-ham"><i class="fa-solid fa-bars"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i></span>
+    </div>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class=" text-color-primary display-1" id="offcanvasRightLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="row mt-2" >
+          <div class="col-md-12 d-flex align-item-center">
+            <a class="body-1-regular social-icons text-danger" href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="row mt-2" >
+          <div class="col-md-12 d-flex align-item-center">
+            <a class="body-1-regular social-icons text-danger" href="https://www.facebook.com"><i class="fa-brands fa-square-facebook"></i></a>
+          </div>
+        </div>
+        <div class="row mt-2" >
+          <div class="col-md-12 d-flex align-item-center">
+            <a class="body-1-regular social-icons text-danger" href="https://www.twitter.com"><i class="fa-brands fa-square-twitter"></i></a>
+          </div>
+        </div>
+        <div class="row mt-2" >
+          <div class="col-md-12 d-flex align-item-center">
+            <a class="body-1-regular social-icons text-danger" href="https://github.com/thinkredtech"><i class="fa-brands fa-square-github"></i></i></a>
+          </div>
+        </div>
+        <hr class="mt-4 mb-4">
+        <div class="row mt-2" >
+          <div class="col-md-12">
+            <span class="body-1-regular text-color-secondary">FAQs</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <span class="body-1-regular text-color-secondary">Terms</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <span class="body-1-regular text-color-secondary">Privacy</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <span class="body-1-regular text-color-secondary">Sitemap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Start Sticky Icon--> 
+<div class="sticky-icon hide-social">
+   <a href="https://www.instagram.com/?hl=en" class="Instagram display-1"><i class="fab fa-instagram"></i> Instagram </a>
+   <a href="https://www.facebook.com/" class="Facebook display-1"><i class="fab fa-facebook-f"> </i> Facebook </a>
+   <a href="https://twitter.com/login" class="Twitter display-1"><i class="fab fa-twitter"> </i> Twitter </a>
+   <a href="https://github.com/thinkredtech" class="Github display-1"><i class="fab fa-github"> </i> Github </a>    
+</div>
+<!--End Sticky Icon-->
+
+
+  <div class="row section-1 d-flex align-items-end justify-content-end">
+    <Image class="img-fluid" src={stackPaper} alt="logo" />
+    <div class="col-md-12 section-1-text">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="ms-2 fs-1 text-color-primary display-1">Simplifying your online presence</p>
+        </div>
+        <div class="col-md-12 mt-4">
+          <p class="ms-2 fs-5 text-color-secondary body-1-regular ">
+            We provide products that elevate your experience
+            and help you best at what you do!
+          </p>
+        </div>
+        <div class="col-md-12 mt-2">
+          <p class="ms-2 body-1-regular text-color-secondary fs-5">Have an app idea ?</p>
+          <button type="button" class="btn btn-danger b-radius cta-small fs-5">Let's build it together</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" id="services">
+    <div class="col-md-12 sticky-top nav-bg hide-nav ">
+      <div class="row fs-5">
+        <nav class="navbar navbar-expand-lg">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <a class="nav-link text-color-secondary small-label"  href="#home">Home</a>
+              </li>
+              <li class="nav-item ms-4">
+                <a class="nav-link text-color-secondary small-label"  href="#services">Service</a>
+              </li>
+              <li class="nav-item ms-4">
+                <a class="nav-link text-color-secondary small-label" href="#expertise">Expertise</a>
+              </li>
+              <li class="nav-item ms-4">
+                <a class="nav-link text-color-secondary  small-label" href="#journal">Journal</a>
+              </li>
+              <li class="nav-item ms-4">
+                <a class="nav-link text-color-secondary small-label"  href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="row mt-4 mt">
+      <div class="col-md-12" >
+        <p class="ms-2 fs-1 heading-2-regular text-color-primary mt">Our Services</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="ms-2 fs-5 body-1-regular text-color-secondary">
+          We provide products that elevate your experience
+          and help you best at what you do!
+        </p>
+      </div>
+    </div>
+    <div class="d-flex flex-row overflow-x-auto flex-nowrap hide-scroll mb-3" >
+      <div class="p-2">
+        <div class="card width-card shade  border-0">
+          <div class="service-image-size d-flex justify-content-center ">
+            <Image class=" img-fluid" src={pdev} alt="logo" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title body-2-medium text-color-secondary">Product Design & Development</h5>
+            <p class="card-text body-1-regular text-color-tertiary fs-5">
+               With the colllection of 10+ years in developing web application,
+              we can help build your applications with primary focus on user experience.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="p-2">
+        <div class="card width-card  shade  border-0">
+          <div class="service-image-size d-flex justify-content-center">
+            <Image class=" img-fluid" src={apaas} alt="logo" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title body-2-medium text-color-secondary">Application Platform As Service</h5>
+            <p class="card-text body-1-regular text-color-tertiary fs-5">
+              With the colllection of 10+ years in developing web application,
+              we can help build your applications with primary focus on user experience.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="p-2">
+        <div class="card width-card shade  border-0">
+          <div class="service-image-size d-flex justify-content-center">
+            <Image class=" img-fluid graphic-image" src={gdb} alt="logo" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title body-2-medium text-color-secondary">Graphic Design And Branding</h5>
+            <p class="card-text body-1-regular text-color-tertiary fs-5">
+              With the colllection of 10+ years in developing web application,
+              we can help build your applications with primary focus on user experience.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="p-2">
+        <div class="card width-card shade  border-0">
+          <div class="service-image-size">
+            <Image class=" img-fluid" src={tc} alt="logo" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title body-2-medium text-color-secondary">Tehnology Consultation</h5>
+            <p class="card-text body-1-regular text-color-tertiary fs-5">
+              With the colllection of 10+ years in developing web application,
+              we can help build your applications with primary focus on user experience.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="p-2">
+        <div class="card width-card shade  border-0">
+          <div class="service-image-size d-flex justify-content-center">
+            <Image class=" img-fluid cloud-image" src={cloud} alt="logo" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title body-2-medium text-color-secondary">Cloud Infrastructure </h5>
+            <p class="card-text body-1-regular text-color-tertiary fs-5">
+              With the colllection of 10+ years in developing web application,
+              we can help build your applications with primary focus on user experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12" id="expertise">
+      <Expertise client:load>
+      </Expertise>
+    </div>
+    <div class="row mt pt-4" id="journal">
+      <div class="col-md-6 pt-2 ">
+        <div class="col-md-12 ">
+          <p class="ms-2 heading-2-regular text-color-primary fs-1">
+            Journal
+          </p>
+        </div>
+        <div class="col-md-12">
+          <p class="ms-2 fs-5 body-1-regular text-color-secondary">
+            Have you ever read a webpage or document that used this
+            text without paying much attention to it? The lorem ipsum is a placeholder text
+            used in publishing and graphic design. This filler text is a short paragraph that contains all
+            the letters of the alphabet. The characters are spread out evenly so that the reader’s attention is
+            focused
+            on the layout of the text instead of its content. Many software programs and applications have made it
+            their
+            default dummy text. Since the lorem ipsum is always used as a placeholder text, its use indicates that
+            this
+            is not a final version of a document, thus helping to avoid unnecessary printing.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 pt-4">
+        <div class="col-md-12">
+          <p class=" fs-4 heading-3-regular text-color-secondary mb-0">Journal 1 </p>
+          <span class=" body-1-regular text-color-tertiary fs-5">Neque porro quisquam est qui dolorem ipsum quia dolor sit
+            amet, consectetur,
+            adipisci velit...</span>
+        </div>
+        <div class="col-md-12">
+          <p class=" fs-4 heading-3-regular mb-0 text-color-secondary">Journal 2 </p>
+          <span class="body-1-regular text-color-tertiary fs-5">Neque porro quisquam est qui dolorem ipsum quia dolor sit
+            amet, consectetur,
+            adipisci velit...</span>
+        </div>
+        <div class="col-md-12">
+          <p class=" fs-4 heading-3-regular mb-0 text-color-secondary">Journal 3 </p>
+          <span class="body-1-regular text-color-tertiary fs-5">Neque porro quisquam est qui dolorem ipsum quia dolor sit
+            amet, consectetur,
+            adipisci velit...</span>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-4 mt-polygon ">
+      <div class="col-md-6">
+        <div class="col-md-12">
+          <p class="ms-2 heading-2-regular text-color-primary fs-1 mt">About Us</p>
+        </div>
+        <div class="col-md-12">
+          <p class="ms-2 fs-5 body-1-regular text-color-secondary">
+            The lorem ipsum is based on De finibus bonorum et malorum, a Latin text written by Cicero in 45 BC.
+            Typographers and printers have used passages from this work for formatting since the 16th century. Many
+            words have been added or modified over the centuries.
+            As a result, the lorem ipsum is no longer considered Latin, even though it looks a lot like it.
+            The lorem ipsum gets its name from the Latin phrase Neque porro quisquam est qui dolorem ipsum quia dolor
+            sit amet. which translates to “Nor is there anyone who loves or pursues or desires to obtain pain of
+            itself,
+            because it is pain.”
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex flex-row">
+          <div class="">
+            <span class="ms-4 ps-4 padding-profile-img"><Image class=" img-fluid rounded-circle profile-img" src={nileshProfile} alt="logo" />
+            </span>
+          </div>
+          <div class="">
+            <span class="ms-4 ps-4 padding-profile-img"><Image class=" img-fluid rounded-circle profile-img" src={riginProfile} alt="logo" />
+            </span>
+          </div>
+        </div>
+        <div class=" d-flex flex-row mt-2">
+          <div class="col-md-6">
+            <span class="ms-3 ps-3 padding-profile-img"><Image class=" img-fluid rounded-circle profile-img" src={sayakProfile} alt="logo" /></span>
+          </div>
+          <div class="col-md-6">
+            <span class="ms-3 ps-3 padding-profile-img"><Image class=" img-fluid rounded-circle profile-img" src={mayurProfile} alt="logo" /></span>
+          </div>
+        </div>
+        <div class="d-flex flex-row mt-2">
+          <div class="col-md-6">
+            <span class="ms-2 ps-2 padding-profile-img"><Image class=" img-fluid rounded-circle profile-img" src={profilePic} alt="logo" /></span>
+          </div>
+          <div class="col-md-6">
+            <span class="ms-2 ps-2 padding-profile-img"><Image class=" img-fluid rounded-circle profile-img" src={profilePic} alt="logo" /></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4 mt-polygon fade-red-bg" id="contact">
+      <div class="col-md-8 mt-4">
+        <div class="col-md-12 mt-4 pt-4">
+          <p class="ms-2 heading-2-regular text-color-primary fs-1">
+            Get In Touch!
+          </p>
+        </div>
+        <div col-md-12>
+          <p class="ms-2 body-1-regular fs-5 text-color-secondary">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere,
+            magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc
+            viverra imperdiet enim.
+            Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+            turpis egestas.
+            Proin pharetra nonummy pede. Mauris et orci. Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.
+            Suspendisse dui purus, scelerisque at,
+            vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.
+          </p>
+        </div>
+        <div class="col-md-12 fs-5">
+          <p class="ms-2"><i class="fa-solid fa-at text-danger"></i><span
+              class=" body-1-regular ms-1 text-color-secondary">hello@thinkred.io</span></p>
+        </div>
+        <div class="row fs-5">
+          <div class="col-md-4">
+            <p class="ms-2"><i class="fa-solid fa-phone text-danger"></i><span
+                class=" body-1-regular text-color-secondary ms-1">0231
+                2656265</span></p>
+          </div>
+          <div class="col-md-4">
+            <p class="ms-2"><i class="fa-solid fa-mobile text-danger"></i><span
+                class=" body-1-regular text-color-secondary ms-1">(+91)
+                991122334455</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mt-4 mt-polygon">
+        <form class="ms-2 mt-4 pt-4 mt-polygon" method="POST">
+          <!-- <div class="col-md-12">
+            <label for="name" class="form-label small-label text-color-secondary fs-5">Your Name :</label>
+            <input type="text" class="form-control form-border" id="name">
+          </div>
+          <div class="col-md-12  mt-2">
+            <label for="email" class="form-label small-label text-color-secondary fs-5">Your Email Address :</label>
+            <input type="email" class="form-control form-border" id="email">
+          </div>
+          <div class="col-md-12  mt-2">
+            <label for="textarea " class="small-label text-color-secondary fs-5">Tell us about your project idea :</label>
+            <textarea class="form-control text-area-height form-border" id="textarea"></textarea>
+          </div>
+          <div class="col-md-12   mt-4 pb-4">
+            <button type="button" class="btn btn-danger b-radius cta-small w-100 fs-5 ">Get a quote !</button>
+          </div>  -->
+          <label>
+            Username:
+            <input type="text" name="username" required />
+          </label>
+          <label>
+            Email:
+            <input type="email" name="email" required />
+          </label>
+          <label>
+            Password:
+            <input type="password" name="password" required minlength="6" />
+          </label>
+          <button>Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="row  bg-white">
+      <div class="col-md-6 footer-fontsize d-flex align-items-center hide-nav">
+        <nav class="navbar navbar-expand-lg">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link breadcrumb-medium text-color-secondary" aria-current="page" href="#">FAQs</a>
+              </li>
+              <li class="nav-item ms-4">
+                <a class="nav-link breadcrumb-medium text-color-secondary" aria-current="page" href="#">Terms</a>
+              </li>
+              <li class="nav-item ms-4">
+                <a class="nav-link breadcrumb-medium text-color-secondary" href="#">Privacy</a>
+              </li>
+              <li class="nav-item ms-4">
+                <a class="nav-link breadcrumb-medium text-color-secondary" href="#">Sitemap</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="col-md-6 d-flex flex-row justify-content-end align-items-center">
+        <div class="me-2">
+          <span class="breadcrumb-medium text-color-secondary fs-6 footer-fontsize footer-fontsize-tab">(c) 2023 All Rights Reserved</span>
+        </div>
+        <div class="ms-2 me-2">
+          <span class="breadcrumb-medium text-color-secondary fs-6 footer-fontsize footer-fontsize-tab">|</span>
+        </div>
+        <div class="ms-2">
+          <span class="breadcrumb-medium text-color-secondary fs-6 footer-fontsize footer-fontsize-tab">thinkRED Technologies LLP.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

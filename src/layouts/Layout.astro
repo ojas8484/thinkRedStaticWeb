@@ -1,0 +1,41 @@
+---
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/homepage.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+interface Props {
+title: string;
+description?: string;
+}
+
+const { title, description } = Astro.props;
+const formattedTitle =
+title === 'Home'
+? 'thinkRED technologies'
+: `${title} | thinkRED technologies`;
+---
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content={description ?? 'Simplifying your online presence' } />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{formattedTitle}</title>
+</head>
+
+<body class="body-bg-color">
+  <div class="container-fluid">
+    <slot>
+      
+    </slot>
+  </div>
+</body>
+
+</html>
+<style is:global>
+  /* Global Styles */
+</style>
