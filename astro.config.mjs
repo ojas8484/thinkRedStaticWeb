@@ -6,5 +6,5 @@ export default defineConfig({
 	// Enable Svelte to support Svelte components.
 	integrations: [svelte()],
 	site: 'https://ojas8484.github.io',
-	base: '/webHosting'
+	base: '/thinkRedStaticWeb'
 });

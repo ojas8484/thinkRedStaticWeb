@@ -30,30 +30,30 @@ const transporter = nodemailer.createTransport({
    }
 })
 // Start nodemailer code
-import nodemailer from 'nodemailer'
+// import nodemailer from 'nodemailer'
 
-if (Astro.request.method === "POST") {
+// if (Astro.request.method === "POST") {
   
-  try {
-    // Verify your transporter
-    await transporter.verify()
+//   try {
+//     // Verify your transporter
+//     await transporter.verify()
 
-    const mailOptions = {
-      from: 'hello@thinkred.tech', // sender address
-      to: "ojas@thinkred.tech", // list of receivers
-      subject: "Hello ✔", // Subject line
-      text: "Hello world?", // plain text body
-      html: "<b>Hello world?</b>", // html body
-    }
+//     const mailOptions = {
+//       from: 'hello@thinkred.tech', // sender address
+//       to: "ojas@thinkred.tech", // list of receivers
+//       subject: "Hello ✔", // Subject line
+//       text: "Hello world?", // plain text body
+//       html: "<b>Hello world?</b>", // html body
+//     }
 
-    const info = await transporter.sendMail(mailOptions)
+//     const info = await transporter.sendMail(mailOptions)
     
-    console.log(`Message sent: ${info.messageId}`)
+//     console.log(`Message sent: ${info.messageId}`)
 
-  } catch (error) {
-    console.log(error)
-  }
-}
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
 // End nodemailer code
 // Component Imports
 import Expertise from '../components/expertise.svelte';
@@ -403,7 +403,7 @@ import Expertise from '../components/expertise.svelte';
       </div>
       <div class="col-md-4 mt-4 mt-polygon">
         <form class="ms-2 mt-4 pt-4 mt-polygon" method="POST">
-          <!-- <div class="col-md-12">
+          <div class="col-md-12">
             <label for="name" class="form-label small-label text-color-secondary fs-5">Your Name :</label>
             <input type="text" class="form-control form-border" id="name">
           </div>
@@ -417,8 +417,8 @@ import Expertise from '../components/expertise.svelte';
           </div>
           <div class="col-md-12   mt-4 pb-4">
             <button type="button" class="btn btn-danger b-radius cta-small w-100 fs-5 ">Get a quote !</button>
-          </div>  -->
-          <label>
+          </div> 
+          <!-- <label>
             Username:
             <input type="text" name="username" required />
           </label>
@@ -430,7 +430,7 @@ import Expertise from '../components/expertise.svelte';
             Password:
             <input type="password" name="password" required minlength="6" />
           </label>
-          <button>Submit</button>
+          <button>Submit</button> -->
         </form>
       </div>
     </div>
