@@ -30,30 +30,30 @@ const transporter = nodemailer.createTransport({
    }
 })
 // Start nodemailer code
-// import nodemailer from 'nodemailer'
+import nodemailer from 'nodemailer'
 
-// if (Astro.request.method === "POST") {
+if (Astro.request.method === "POST") {
   
-//   try {
-//     // Verify your transporter
-//     await transporter.verify()
+  try {
+    // Verify your transporter
+    await transporter.verify()
 
-//     const mailOptions = {
-//       from: 'hello@thinkred.tech', // sender address
-//       to: "ojas@thinkred.tech", // list of receivers
-//       subject: "Hello ✔", // Subject line
-//       text: "Hello world?", // plain text body
-//       html: "<b>Hello world?</b>", // html body
-//     }
+    const mailOptions = {
+      from: 'hello@thinkred.tech', // sender address
+      to: "ojas@thinkred.tech", // list of receivers
+      subject: "Hello ✔", // Subject line
+      text: "Hello world?", // plain text body
+      html: "<b>Hello world?</b>", // html body
+    }
 
-//     const info = await transporter.sendMail(mailOptions)
+    const info = await transporter.sendMail(mailOptions)
     
-//     console.log(`Message sent: ${info.messageId}`)
+    console.log(`Message sent: ${info.messageId}`)
 
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
+  } catch (error) {
+    console.log(error)
+  }
+}
 // End nodemailer code
 // Component Imports
 import Expertise from '../components/expertise.svelte';
