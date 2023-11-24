@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel/static';
 import svelte from '@astrojs/svelte';
 import node from "@astrojs/node";
 // https://astro.build/config
