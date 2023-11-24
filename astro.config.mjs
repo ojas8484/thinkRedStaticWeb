@@ -8,7 +8,9 @@ export default defineConfig({
 	integrations: [svelte()],
 	site: 'https://ojas8484.github.io',
 	base: '/thinkRedStaticWeb',
-	output: 'hybrid',
-	adapter: vercel(),
+	output: 'server',
+	adapter: node({
+	  mode: "standalone"
+	})
 	
 });
