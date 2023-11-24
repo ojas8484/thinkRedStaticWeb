@@ -15,49 +15,54 @@ import tc from "../assets/tc.png"
 import cloud from "../assets/cloud.png"
 import "../assets/fonts/fonts.css";
 import "../scripts/scriptForHomepage.ts";
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
+export const prerender = true;
+
 const key = import.meta.env;
 const transporter = nodemailer.createTransport({
-   host: 'smtp.gmail.com',
-   port: 465,
-   secure: true,
-   auth: {
-    type: 'OAuth2',
-    user: key.client_email,  // Your email address
-    serviceClient: key.client_id,
-    privateKey: key.private_key,
-    accessUrl: key.token_uri
-   }
-})
+    service: 'gmail',
+    auth: {
+        user: 'ojas@thinkred.tech',
+        pass: 'mlza cgki uaad slyz'
+    }
+});
 // Start nodemailer code
 import nodemailer from 'nodemailer'
 
 if (Astro.request.method === "POST") {
-  
+
   try {
     // Verify your transporter
-    await transporter.verify()
+    const data = await Astro.request.formData();
+    const emailAddress = data.get("email");
+    const clientName = data.get("name");
+    console.log(JSON.stringify(emailAddress,null,4));
+    console.log(JSON.stringify(clientName,null,4));
 
-    const mailOptions = {
-      from: 'hello@thinkred.tech', // sender address
-      to: "ojas@thinkred.tech", // list of receivers
-      subject: "Hello ✔", // Subject line
-      text: "Hello world?", // plain text body
-      html: "<b>Hello world?</b>", // html body
-    }
+    const result = await transporter.sendMail({
+        from: 'ojas@thinkred.tech',
+        to: JSON.stringify(emailAddress,null,4),
+        subject: 'Test run for node mailer ',
+        text:'Hey' + JSON.stringify(clientName,null,4) +'We have recieved mail',
+    });
 
-    const info = await transporter.sendMail(mailOptions)
-    
-    console.log(`Message sent: ${info.messageId}`)
+    console.log(JSON.stringify(result, null, 4));
 
   } catch (error) {
     console.log(error)
   }
+  
 }
 // End nodemailer code
 // Component Imports
 import Expertise from '../components/expertise.svelte';
 ---
+<script>  
+  if ( window.history.replaceState ) 
+  { 
+      window.history.replaceState( null, null, window.location.href );      
+  } 
+</script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 <Layout title='Home'>
@@ -403,34 +408,34 @@ import Expertise from '../components/expertise.svelte';
       </div>
       <div class="col-md-4 mt-4 mt-polygon">
         <form class="ms-2 mt-4 pt-4 mt-polygon" method="POST">
-          <div class="col-md-12">
-            <label for="name" class="form-label small-label text-color-secondary fs-5">Your Name :</label>
-            <input type="text" class="form-control form-border" id="name">
+           <div class="col-md-12">
+            <label for="name" class="form-label small-label text-color-secondary fs-5" required  autocomplete="off">Your Name :</label>
+            <input type="text" class="form-control form-border" id="name" name="name">
           </div>
           <div class="col-md-12  mt-2">
-            <label for="email" class="form-label small-label text-color-secondary fs-5">Your Email Address :</label>
-            <input type="email" class="form-control form-border" id="email">
+            <label for="email" class="form-label small-label text-color-secondary fs-5" required  autocomplete="off">Your Email Address :</label>
+            <input type="email" class="form-control form-border" id="email"  name="email">
           </div>
           <div class="col-md-12  mt-2">
             <label for="textarea " class="small-label text-color-secondary fs-5">Tell us about your project idea :</label>
             <textarea class="form-control text-area-height form-border" id="textarea"></textarea>
           </div>
           <div class="col-md-12   mt-4 pb-4">
-            <button type="button" class="btn btn-danger b-radius cta-small w-100 fs-5 ">Get a quote !</button>
-          </div> 
-          <!-- <label>
+            <button  class="btn btn-danger b-radius cta-small w-100 fs-5 ">Get a quote !</button>
+          </div>   
+           <!-- <label>
             Username:
-            <input type="text" name="username" required />
+            <input type="text" name="username" required  autocomplete="off"/>
           </label>
           <label>
             Email:
-            <input type="email" name="email" required />
+            <input type="email" name="email" required autocomplete="off" />
           </label>
           <label>
             Password:
-            <input type="password" name="password" required minlength="6" />
+            <input  type="password" name="password" required minlength="6" autocomplete="off" />
           </label>
-          <button>Submit</button> -->
+          <button class="btn btn-danger b-radius cta-small w-100 fs-5">Submit</button>  -->
         </form>
       </div>
     </div>
