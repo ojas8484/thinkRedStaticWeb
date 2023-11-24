@@ -8,5 +8,8 @@ export default defineConfig({
 	site: 'https://ojas8484.github.io',
 	base: '/thinkRedStaticWeb',
 	output: 'server',
+	adapter: node({
+		mode: "standalone"
+	  })
 	
 });
