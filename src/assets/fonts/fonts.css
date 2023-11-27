@@ -30,7 +30,7 @@
 @font-face {
     font-family: 'montserrat';
     src: url('./Montserrat/Montserrat-Regular.ttf');
-    font-weight: 400;
+    font-weight: 450;
     font-style: normal;
 }
 /* Medium */
@@ -70,7 +70,7 @@
 .heading-2-regular {
     font-family: 'montserrat';
     src: url('./montserrat/Montserrat-Regular.ttf');
-    font-weight: 400;
+    font-weight: 450;
     font-style: normal;
     height: 24 32;
     letter-spacing: -0.25px !important;
@@ -88,7 +88,7 @@
 .heading-3-regular {
     font-family: 'montserrat';
     src: url('./montserrat/Montserrat-Regular.ttf');
-    font-weight: 400;
+    font-weight: 450;
     font-style: normal;
     height: 18 26;
     letter-spacing: -0.25px !important;
@@ -107,7 +107,7 @@
 .body-1-regular {
     font-family: 'montserrat';
     src: url('./montserrat/Montserrat-Regular.ttf');
-    font-weight: 400;
+    font-weight: 450;
     font-style: normal;
     height: 16 24;
     letter-spacing: 0em !important;
