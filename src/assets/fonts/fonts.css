@@ -36,7 +36,7 @@
 /* Medium */
 @font-face {
     font-family: 'montserrat';
-    src: url('./montserrat/Montserrat-Medium.ttf');
+    src: url('./montserrat/montserrat-medium.ttf');
     font-weight: 500;
     font-style: normal;
 }                                                            
@@ -51,7 +51,7 @@
 /* Headings */
 .heading-1 {
     font-family: 'montserrat';
-    src: url('./montserrat/Montserrat-Medium.ttf');
+    src: url('./montserrat/montserrat-medium.ttf');
     font-weight: 500;
     font-style: normal;
     height: 32 40;
@@ -60,7 +60,7 @@
 
 .heading-2-medium {
     font-family: 'montserrat';
-    src: url('./montserrat/Montserrat-Medium.ttf');
+    src: url('./montserrat/montserrat-medium.ttf');
     font-weight: 500;
     font-style: normal;
     height: 24 32;
@@ -78,7 +78,7 @@
 
 .heading-3-medium {
     font-family: 'montserrat';
-    src: url('./montserrat/Montserrat-Medium.ttf');
+    src: url('./montserrat/montserrat-medium.ttf');
     font-weight: 500;
     font-style: normal;
     height: 18 26;
@@ -97,7 +97,7 @@
 /* Body Text */
 .body-1-medium {
     font-family: 'montserrat';
-    src: url('./montserrat/Montserrat-Medium.ttf');
+    src: url('./montserrat/montserrat-medium.ttf');
     font-weight: 500;
     font-style: normal;
     height: 16 24;
@@ -162,7 +162,7 @@
 
 .label-1-medium {
     font-family: 'montserrat';
-    src: url('./montserrat/Montserrat-Medium.ttf');
+    src: url('./montserrat/montserrat-medium.ttf');
     font-weight: 500;
     font-style: normal;
     height: 14;
@@ -180,7 +180,7 @@
 
 .label-2-medium {
     font-family: 'montserrat';
-    src: url('./montserrat/Montserrat-Medium.ttf');
+    src: url('./montserrat/montserrat-medium.ttf');
     font-weight: 500;
     font-style: normal;
     height: 12;
@@ -209,7 +209,7 @@
 
 .caption-medium {
     font-family: 'montserrat';
-    src: url('./montserrat/Montserrat-Medium.ttf');
+    src: url('./montserrat/montserrat-medium.ttf');
     font-weight: 500;
     font-style: normal;
     height: 12 16;
@@ -217,7 +217,7 @@
 }
 .breadcrumb-medium{
     font-family: 'montserrat';
-    src: url('./montserrat/Montserrat-Medium.ttf');
+    src: url('./montserrat/montserrat-medium.ttf');
     font-weight: 500;
     font-style: medium;
     height: 10 14;
