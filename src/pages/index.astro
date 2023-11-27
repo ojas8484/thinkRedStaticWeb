@@ -33,17 +33,17 @@ if (Astro.request.method === "POST") {
 
   try {
     // Verify your transporter
-    const data = await Astro.request.formData();
-    const emailAddress = data.get("email");
-    const clientName = data.get("name");
-    console.log(JSON.stringify(emailAddress,null,4));
-    console.log(JSON.stringify(clientName,null,4));
+    // const data = await Astro.request.formData();
+    // const emailAddress = data.get("email");
+    // const clientName = data.get("name");
+    // console.log(JSON.stringify(emailAddress,null,4));
+    // console.log(JSON.stringify(clientName,null,4));
 
     const result = await transporter.sendMail({
         from: 'ojas@thinkred.tech',
-        to: JSON.stringify(emailAddress,null,4),
+        to: 'aparadhojas1@gmail.com',
         subject: 'Test run for node mailer ',
-        text:'Hey' + JSON.stringify(clientName,null,4) +'We have recieved mail',
+        text:'Hey We have recieved mail',
     });
 
     console.log(JSON.stringify(result, null, 4));
