@@ -31,7 +31,6 @@ import nodemailer from 'nodemailer'
 if (Astro.request.method === "POST") {
 
   try {
-    Verify your transporter
     const data = await Astro.request.formData();
     const emailAddress = data.get("email");
     const clientName = data.get("name");
