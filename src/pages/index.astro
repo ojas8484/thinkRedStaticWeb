@@ -14,7 +14,6 @@ import gdb from "../assets/graphicDesign.avif"
 import tc from "../assets/tc.png"
 import cloud from "../assets/cloud.png"
 import "../assets/fonts/fonts.css";
-import "../scripts/scriptForHomepage.ts";
 import dotenv from 'dotenv';
 export const prerender = true;
 
@@ -57,6 +56,7 @@ if (Astro.request.method === "POST") {
 // Component Imports
 import Expertise from '../components/expertise.svelte';
 ---
+<script is:inline src="../src/scripts/scriptForHomepage.ts"></script>
 <script>  
   if ( window.history.replaceState ) 
   { 
@@ -324,7 +324,7 @@ import Expertise from '../components/expertise.svelte';
       </div>
     </div>
     <div class="row mb-4 mt-polygon ">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <div class="col-md-12">
           <p class="ms-2 heading-2-regular text-color-primary fs-1 mt">About Us</p>
         </div>
@@ -341,7 +341,7 @@ import Expertise from '../components/expertise.svelte';
           </p>
         </div>
       </div>
-      <div class="col-md-6">
+      <!-- <div class="col-md-6">
         <div class="d-flex flex-row">
           <div class="">
             <span class="ms-4 ps-4 padding-profile-img"><Image class=" img-fluid rounded-circle profile-img" src={nileshProfile} alt="logo" />
@@ -368,7 +368,7 @@ import Expertise from '../components/expertise.svelte';
             <span class="ms-2 ps-2 padding-profile-img"><Image class=" img-fluid rounded-circle profile-img" src={profilePic} alt="logo" /></span>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="row mt-4 mt-polygon fade-red-bg" id="contact">
       <div class="col-md-8 mt-4">

@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 import svelte from '@astrojs/svelte';
-// import node from "@astrojs/node";
+import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
@@ -8,8 +8,6 @@ export default defineConfig({
   integrations: [svelte()],
   site: 'https://ojas8484.github.io',
   base: '/thinkRedStaticWeb',
-//   output: "server",
-//   adapter: node({
-//     mode: "standalone"
-//   })
+  output: "server",
+  adapter: cloudflare()
 });
