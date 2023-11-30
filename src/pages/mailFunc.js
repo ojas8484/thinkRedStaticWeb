@@ -1,7 +1,7 @@
 
 
-import nodemailer from 'nodemailer'
-const transporter = nodemailer.createTransport({
+const nodemailer = require('nodemailer');
+let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'ojas@thinkred.tech',
