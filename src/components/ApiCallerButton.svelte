@@ -1,9 +1,5 @@
 <!-- ApiCallerButton.astro -->
 
-<template>
-    <button @click="callCloudflareAPI">Call Cloudflare API</button>
-  </template>
-  
   <script setup>
     const callCloudflareAPI = async () => {
       try {
@@ -22,4 +18,9 @@
       }
     };
   </script>
+  <template>
+    <button @click="callCloudflareAPI">Call Cloudflare API</button>
+  </template>
+  
+
   
