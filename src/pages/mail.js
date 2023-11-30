@@ -1,5 +1,5 @@
 // Replace 'https://your-cloudflare-worker.youraccount.workers.dev/your-endpoint' with your Cloudflare Worker URL and endpoint
-const workerURL = 'https://worker-rapid-base-08ea.ojas-443.workers.dev';
+const workerURL = 'https://worker-rapid-base-08ea.ojas-443.workers.dev/hello';
 
 // Fetch data from Cloudflare Worker
 fetch(workerURL)
