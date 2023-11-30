@@ -16,7 +16,8 @@ import cloud from "../assets/cloud.png"
 import "../assets/fonts/fonts.css";
 import dotenv from 'dotenv';
 export const prerender = true;
-
+const myKV = Astro.locals.runtime.env.MY_KV;
+const value = await myKV.get("key");
 const key = import.meta.env;
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -67,7 +68,7 @@ import Expertise from '../components/expertise.svelte';
 <Layout title='Home'>
   <div class="row header" id="home">
     <div class="col-md-6 d-flex align-items-center justify-content-between hide-social">
-      <Image class="header-img img-fluid" src={logo} alt="logo" />
+      {value}
     </div>
     <!-- <div class=" col-md-6 d-flex justify-content-end  hide-social">
       <nav class="social">
