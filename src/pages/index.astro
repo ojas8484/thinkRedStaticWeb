@@ -53,7 +53,7 @@ if (Astro.request.method === "POST") {
 // End nodemailer code
 // Component Imports
 import Expertise from '../components/expertise.svelte';
-import ApiCallerButton from './ApiCallerButton.astro';
+import apicaller from '../components/apicaller.astro';
 ---
 <script is:inline src="../src/scripts/scriptForHomepage.ts"></script>
 <script>  
@@ -67,7 +67,7 @@ import ApiCallerButton from './ApiCallerButton.astro';
 <Layout title='Home'>
   <div class="row header" id="home">
     <div class="col-md-6 d-flex align-items-center justify-content-between hide-social">
-      <ApiCallerButton />
+      <apicaller />
         </div>
     <!-- <div class=" col-md-6 d-flex justify-content-end  hide-social">
       <nav class="social">
