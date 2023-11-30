@@ -53,6 +53,9 @@ if (Astro.request.method === "POST") {
 // End nodemailer code
 // Component Imports
 import Expertise from '../components/expertise.svelte';
+const myKV = Astro.locals.runtime.env.mail_api;
+const value = await myKV.get("key");
+
 ---
 <script is:inline src="../src/scripts/scriptForHomepage.ts"></script>
 <script>  
@@ -66,7 +69,7 @@ import Expertise from '../components/expertise.svelte';
 <Layout title='Home'>
   <div class="row header" id="home">
     <div class="col-md-6 d-flex align-items-center justify-content-between hide-social">
-      <Image class="header-img img-fluid" src={logo} alt="logo" />
+      {value}
     </div>
     <!-- <div class=" col-md-6 d-flex justify-content-end  hide-social">
       <nav class="social">
