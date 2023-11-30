@@ -1,10 +1,10 @@
-import type { APIContext } from "astro";
+export async function GET(context) {
+  const runtime = context.locals.runtime;
 
-export async function get({locals}: APIContext) => {
-  // the type KVNamespace comes from the @cloudflare/workers-types package
-  const { MY_KV } = locals.runtime.env;
-
-  return {
-    // ...
-  };
-};
+  return new Response(JSON.stringify(runtime), {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+}
