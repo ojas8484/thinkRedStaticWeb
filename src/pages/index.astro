@@ -53,7 +53,7 @@ if (Astro.request.method === "POST") {
 // End nodemailer code
 // Component Imports
 import Expertise from '../components/expertise.svelte';
-import ApiCallerButton from '../components/ApiCallerButton.svelte';
+
 ---
 <script is:inline src="../src/scripts/scriptForHomepage.ts"></script>
 <script>  
@@ -65,14 +65,10 @@ import ApiCallerButton from '../components/ApiCallerButton.svelte';
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 <Layout title='Home'>
-  <ApiCallerButton client:load>
-  </ApiCallerButton>
-  <hr class="mt-4 mb-4">
-
   <div class="row header" id="home">
     <div class="col-md-6 d-flex align-items-center justify-content-between hide-social">
-      <apicaller />
-        </div>
+      <Image class="header-img img-fluid" src={logo} alt="logo" />
+    </div>
     <!-- <div class=" col-md-6 d-flex justify-content-end  hide-social">
       <nav class="social">
           <ul>
