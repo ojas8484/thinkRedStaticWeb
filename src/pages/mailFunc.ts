@@ -1,5 +1,5 @@
 export async function GET(context) {
-  const runtime = context.locals.runtime;
+  const runtime = "hello this is test api"
 
   return new Response(JSON.stringify(runtime), {
     status: 200,
