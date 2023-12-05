@@ -27,29 +27,29 @@ const transporter = nodemailer.createTransport({
 // Start nodemailer code
 import nodemailer from 'nodemailer'
 
-if (Astro.request.method === "POST") {
+// if (Astro.request.method === "POST") {
 
-  try {
-    const data = await Astro.request.formData();
-    const emailAddress = data.get("email");
-    const clientName = data.get("name");
-    console.log(JSON.stringify(emailAddress,null,4));
-    console.log(JSON.stringify(clientName,null,4));
+//   try {
+//     const data = await Astro.request.formData();
+//     const emailAddress = data.get("email");
+//     const clientName = data.get("name");
+//     console.log(JSON.stringify(emailAddress,null,4));
+//     console.log(JSON.stringify(clientName,null,4));
 
-    const result = await transporter.sendMail({
-        from: 'ojas@thinkred.tech',
-        to: JSON.stringify(emailAddress,null,4),
-        subject: 'Test run for node mailer ',
-        text:'Hey,' + JSON.stringify(clientName,null,4) +' We have recieved mail.',
-    });
+//     const result = await transporter.sendMail({
+//         from: 'ojas@thinkred.tech',
+//         to: JSON.stringify(emailAddress,null,4),
+//         subject: 'Test run for node mailer ',
+//         text:'Hey,' + JSON.stringify(clientName,null,4) +' We have recieved mail.',
+//     });
 
-    console.log(JSON.stringify(result, null, 4));
+//     console.log(JSON.stringify(result, null, 4));
 
-  } catch (error) {
-    console.log(error)
-  }
+//   } catch (error) {
+//     console.log(error)
+//   }
   
-}
+// }
 // End nodemailer code
 // Component Imports
 import Expertise from '../components/expertise.svelte';
@@ -67,7 +67,7 @@ console.log(data);
 <script>
   export async function onSubmit(event) {
     event.preventDefault();
-    
+    console.log('swapnil');
     const formData = new FormData(event.target);
     const toEmail = formData.get('email');
     const subject = "Test Mail";
@@ -439,7 +439,7 @@ console.log(data);
         </div>
       </div>
       <div class="col-md-4 mt-4 mt-polygon">
-        <form class="ms-2 mt-4 pt-4 mt-polygon" method="POST" action="/send-email">
+        <form class="ms-2 mt-4 pt-4 mt-polygon" method="POST" action="https://send-email.ojas-443.workers.dev/send-email">
            <div class="col-md-12">
             <label for="name" class="form-label small-label text-color-secondary fs-5" required  autocomplete="off">Your Name :</label>
             <input type="text" class="form-control form-border" id="name" name="name">
