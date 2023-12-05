@@ -27,29 +27,29 @@ const transporter = nodemailer.createTransport({
 // Start nodemailer code
 import nodemailer from 'nodemailer'
 
-// if (Astro.request.method === "POST") {
+if (Astro.request.method === "POST") {
 
-//   try {
-//     const data = await Astro.request.formData();
-//     const emailAddress = data.get("email");
-//     const clientName = data.get("name");
-//     console.log(JSON.stringify(emailAddress,null,4));
-//     console.log(JSON.stringify(clientName,null,4));
+  try {
+    const data = await Astro.request.formData();
+    const emailAddress = data.get("email");
+    const clientName = data.get("name");
+    console.log(JSON.stringify(emailAddress,null,4));
+    console.log(JSON.stringify(clientName,null,4));
 
-//     const result = await transporter.sendMail({
-//         from: 'ojas@thinkred.tech',
-//         to: JSON.stringify(emailAddress,null,4),
-//         subject: 'Test run for node mailer ',
-//         text:'Hey,' + JSON.stringify(clientName,null,4) +' We have recieved mail.',
-//     });
+    const result = await transporter.sendMail({
+        from: 'ojas@thinkred.tech',
+        to: JSON.stringify(emailAddress,null,4),
+        subject: 'Test run for node mailer ',
+        text:'Hey,' + JSON.stringify(clientName,null,4) +' We have recieved mail.',
+    });
 
-//     console.log(JSON.stringify(result, null, 4));
+    console.log(JSON.stringify(result, null, 4));
 
-//   } catch (error) {
-//     console.log(error)
-//   }
+  } catch (error) {
+    console.log(error)
+  }
   
-// }
+}
 // End nodemailer code
 // Component Imports
 import Expertise from '../components/expertise.svelte';
@@ -63,36 +63,6 @@ console.log(data);
   { 
       window.history.replaceState( null, null, window.location.href );      
   } 
-</script>
-<script>
-  export async function onSubmit(event) {
-    event.preventDefault();
-    console.log('swapnil');
-    const formData = new FormData(event.target);
-    const toEmail = formData.get('email');
-    const subject = "Test Mail";
-    const message = "Hello swapnil";
-
-    try {
-      const response = await fetch('https://send-email.ojas-443.workers.dev/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ toEmail, subject, message }),
-      });
-
-      if (response.ok) {
-        // Email sent successfully
-        console.log('Email sent!');
-      } else {
-        // Error sending email
-        console.error('Failed to send email.');
-      }
-    } catch (error) {
-      console.error('Error sending email:', error);
-    }
-  }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
@@ -439,7 +409,7 @@ console.log(data);
         </div>
       </div>
       <div class="col-md-4 mt-4 mt-polygon">
-        <form class="ms-2 mt-4 pt-4 mt-polygon" method="POST" action="https://send-email.ojas-443.workers.dev/send-email">
+        <form class="ms-2 mt-4 pt-4 mt-polygon" method="POST">
            <div class="col-md-12">
             <label for="name" class="form-label small-label text-color-secondary fs-5" required  autocomplete="off">Your Name :</label>
             <input type="text" class="form-control form-border" id="name" name="name">
@@ -453,7 +423,7 @@ console.log(data);
             <textarea class="form-control text-area-height form-border" id="textarea"></textarea>
           </div>
           <div class="col-md-12   mt-4 pb-4">
-            <button type="submit" class="btn btn-danger b-radius cta-small w-100 fs-5 ">Get a quote !</button>
+            <button  class="btn btn-danger b-radius cta-small w-100 fs-5 ">Get a quote !</button>
           </div> 
         </form>
       </div>
