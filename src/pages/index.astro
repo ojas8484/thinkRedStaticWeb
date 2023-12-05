@@ -53,7 +53,9 @@ if (Astro.request.method === "POST") {
 // End nodemailer code
 // Component Imports
 import Expertise from '../components/expertise.svelte';
-
+const response = await fetch('https://worker-rapid-base-08ea.ojas-443.workers.dev');
+const data = await response.json();
+console.log(data);
 ---
 <script is:inline src="../src/scripts/scriptForHomepage.ts"></script>
 <script>  
@@ -61,6 +63,36 @@ import Expertise from '../components/expertise.svelte';
   { 
       window.history.replaceState( null, null, window.location.href );      
   } 
+</script>
+<script>
+  export async function onSubmit(event) {
+    event.preventDefault();
+    
+    const formData = new FormData(event.target);
+    const toEmail = formData.get('email');
+    const subject = "Test Mail";
+    const message = "Hello swapnil";
+
+    try {
+      const response = await fetch('/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ toEmail, subject, message }),
+      });
+
+      if (response.ok) {
+        // Email sent successfully
+        console.log('Email sent!');
+      } else {
+        // Error sending email
+        console.error('Failed to send email.');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
+  }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
@@ -156,6 +188,7 @@ import Expertise from '../components/expertise.svelte';
             We provide products that elevate your experience
             and help you best at what you do!
           </p>
+          <p></p>
         </div>
         <div class="col-md-12 mt-2">
           <p class="ms-2 body-1-regular text-color-secondary fs-5">Have an app idea ?</p>
@@ -406,7 +439,7 @@ import Expertise from '../components/expertise.svelte';
         </div>
       </div>
       <div class="col-md-4 mt-4 mt-polygon">
-        <form class="ms-2 mt-4 pt-4 mt-polygon" method="POST">
+        <form class="ms-2 mt-4 pt-4 mt-polygon" method="POST" action="/send-email">
            <div class="col-md-12">
             <label for="name" class="form-label small-label text-color-secondary fs-5" required  autocomplete="off">Your Name :</label>
             <input type="text" class="form-control form-border" id="name" name="name">
@@ -420,7 +453,7 @@ import Expertise from '../components/expertise.svelte';
             <textarea class="form-control text-area-height form-border" id="textarea"></textarea>
           </div>
           <div class="col-md-12   mt-4 pb-4">
-            <button  class="btn btn-danger b-radius cta-small w-100 fs-5 ">Get a quote !</button>
+            <button type="submit" class="btn btn-danger b-radius cta-small w-100 fs-5 ">Get a quote !</button>
           </div> 
         </form>
       </div>
