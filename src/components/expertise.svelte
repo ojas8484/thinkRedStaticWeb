@@ -6,7 +6,7 @@
     }
     const uiUx = {
         title: "UI/UX Development",
-        details: 'Our UI/UX development services are driven by a passion for crafting intuitive, visually appealing, and user-centric interfaces that resonate with your audience.We understand the pivotal role that UI/UX plays in engaging users and driving success. Our team of skilled designers and developers collaborate to blend creativity with technical expertise, ensuring that every interaction is meaningful and delightful.',
+        details: 'Our UI/UX development services are driven by a passion for crafting intuitive, visually appealing, and user-centric interfaces that resonate with your audience.We understand the pivotal role that UI/UX plays in engaging users and driving success. Our team of skilled designers and developers collaborate to blend creativity with technical expertise.',
         imageUrl:'assets/icons/uiTitleImage.png'
     }
     const backEndDev = {
