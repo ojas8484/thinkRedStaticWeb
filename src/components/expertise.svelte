@@ -156,8 +156,11 @@
                         <div class="col-md-12 overlay">
                             <span class="ms-4 ps-2 heading-3-regular fs-3 fs-for-card">{expertiseTitle}</span>
                         </div>
-                        <span class="footer-fontsize">{expertiseData}</span>
-                        <div class="col-md-12 overlay">
+                        <div class="col-md-4 offset-md-4 footer-fontsize">
+                            <span class="fs-6">{expertiseData}</span>
+                        </div>
+                        <!-- <span class="footer-fontsize">{expertiseData}</span> -->
+                        <!-- <div class="col-md-12 overlay">
                             <p class="body-1-regular ms-4 ps-4 fs-6 content-fontsize">
                                 We have 10+ years of experience in developing web
                             </p>
@@ -181,7 +184,7 @@
                             <p class="body-1-regular ms-2 content-fontsize">
                                 Microservices,Serverless,Distrbuted Services,++
                             </p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
