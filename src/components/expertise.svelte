@@ -27,7 +27,7 @@
     }
     const projectManagement = {
         title: "Project Management",
-        details: 'Demo data for project management.',
+        details: 'We understand the critical role that effective project management plays in delivering successful outcomes.Our experienced team of project managers utilizes proven methodologies and industry best practices to oversee projects from inception to completion.We specialize in meticulous planning,resource allocation,and risk management to ensure that projects are delivered on time and within budget.Our collaborative approach fosters clear communication and transparency throughout the project lifecycle.',
         imageUrl:'assets/icons/projManagementTitleImage.png'
 
     }
