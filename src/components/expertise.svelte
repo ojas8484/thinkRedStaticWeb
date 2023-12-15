@@ -33,7 +33,7 @@
     }
     const platformDevelopment = {
         title: "Platform Development",
-        details: 'Demo data for platform development.',
+        details: 'We understand the pivotal role that platforms play in modern business ecosystems. Our expert team of developers specializes in architecting and engineering custom platforms that cater to diverse needs across industries.From conceptualization to deployment,we meticulously design and develop platforms that align with your business objectives.Leveraging the latest technologies and industry best practices,we create versatile,user-friendly,and scalable solutions.',
         imageUrl:'assets/icons/platformDevTitleImage.png'
     }
     const devOpsInfra = {
