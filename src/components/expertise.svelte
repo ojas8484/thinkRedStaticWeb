@@ -11,7 +11,7 @@
     }
     const backEndDev = {
         title: "Backend Development",
-        details: 'Our backend development services are tailored to create scalable,secure,and high-performance solutions that power your digital ecosystem.We understand the backbone of every successful application lies in its backend infrastructure. Our team of experienced backend developers specializes in building reliable, efficient, and scalable',
+        details: 'Our backend development services are tailored to create scalable,secure,and high-performance solutions that power your digital ecosystem.We understand the backbone of every successful app lies in its backend infrastructure. Our team of experienced backend developers specializes in building reliable, efficient, and scalable',
         imageUrl:'assets/icons/backendTitleImage.png'
     }
     const mobileAppDev = {
