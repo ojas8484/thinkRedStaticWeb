@@ -16,7 +16,7 @@
     }
     const mobileAppDev = {
         title: "Mobile App Development",
-        details: 'Demo data for mobile app dev.',
+        details: 'We understand the significance of mobile experiences in todays digital landscape. Our team of skilled developers and designers specializes in creating captivating mobile apps across iOS, Android, and cross-platform frameworks.From concept to launch, we follow a comprehensive development cycle, meticulously crafting every aspect of your app. Our focus remains on delivering seamless user experiences, leveraging the latest technologies and industry best practices.',
         imageUrl:'assets/icons/mobileAppDevTitleImage.png'
     }
     const productManagement = {
