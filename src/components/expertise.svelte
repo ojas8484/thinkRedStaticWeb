@@ -21,7 +21,7 @@
     }
     const productManagement = {
         title: "Product Management",
-        details: 'Demo data for product management.',
+        details: 'We understand the complexities and challenges of bringing a product to market. Our seasoned team of product managers combines expertise in market analysis, user research, and project management to drive product development forward.From ideation to launch and beyond,we work closely with you to define, plan, and execute your product vision. We navigate the intricacies of market trends, user needs, and technological landscapes to create strategies that resonate with your audience.',
         imageUrl:'assets/icons/prodManagementTitleImage.png'
 
     }
