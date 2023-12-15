@@ -1,7 +1,7 @@
 <script>
     const frontEndDev = {
         title: "Frontend Development",
-        details: 'Demo data for front end development.',
+        details: 'Our front-end development services are crafted to transform your ideas into visually stunning, intuitive, and responsive digital solutions.At [Your Company/Brand], we understand the pivotal role that front-end development plays in captivating users and driving engagement. Our team of skilled developers specializes in crafting pixel-perfect designs and seamless interactions across various platforms and devices.',
         imageUrl:'assets/icons/frontEndDevTitleImage.png'
     }
     const uiUx = {
