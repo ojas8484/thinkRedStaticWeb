@@ -38,7 +38,7 @@
     }
     const devOpsInfra = {
         title: "DevOps + Infrastructure",
-        details: 'We understand the pivotal role that DevOps practices and well-architected infrastructure play in modern IT operations. Our team of experienced DevOps engineers specializes in implementing best practices, automation, and continuous integration/continuous deployment (CI/CD) pipelines.From infrastructure setup to deployment and maintenance, we meticulously design, build, and manage environments that support your applications performance, security, and needs.',
+        details: 'We understand the pivotal role that DevOps practices and well-architected infrastructure play in modern IT operations. Our team of experienced DevOps engineers specializes in implementing best practices, automation, and continuous integration/continuous deployment (CI/CD) pipelines.From infrastructure setup to deployment and maintenance, we meticulously design, build, and manage environments that support your applications performance,security and need.',
         imageUrl:'assets/icons/devOpsTitleImage.png'
 
     }
