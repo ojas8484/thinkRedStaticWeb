@@ -11,12 +11,12 @@
     }
     const backEndDev = {
         title: "Backend Development",
-        details: 'Our backend development services are tailored to create scalable,secure,and high-performance solutions that power your digital ecosystem.We understand the backbone of every successful app lies in its backend infrastructure. Our team of experienced backend developers specializes in building reliable, efficient, and scalable',
+        details: 'Our backend development services are tailored to create scalable,secure,and high-performance solutions that power your digital ecosystem.We understand the backbone of every successful app lies in its backend infrastructure. Our team of experienced backend developers specializes in building reliable,efficient,and scalable',
         imageUrl:'assets/icons/backendTitleImage.png'
     }
     const mobileAppDev = {
         title: "Mobile App Development",
-        details: 'We understand the significance of mobile experiences in todays digital landscape. Our team of skilled developers and designers specializes in creating captivating mobile apps across iOS, Android, and cross-platform frameworks.From concept to launch, we follow a comprehensive development cycle, meticulously crafting every aspect of your app. Our focus remains on delivering seamless user experiences, leveraging the latest technologies and industry best practices.',
+        details: 'We understand the significance of mobile experiences in todays digital landscape. Our team of skilled developers and designers specializes in creating captivating mobile apps across iOS, Android, and cross-platform frameworks.From concept to launch, we follow a comprehensive development cycle, meticulously crafting every aspect of your app.',
         imageUrl:'assets/icons/mobileAppDevTitleImage.png'
     }
     const productManagement = {
