@@ -6,7 +6,7 @@
     }
     const uiUx = {
         title: "UI/UX Development",
-        details: 'Demo data for front end ui/ux dev.',
+        details: 'Our UI/UX development services are driven by a passion for crafting intuitive, visually appealing, and user-centric interfaces that resonate with your audience.We understand the pivotal role that UI/UX plays in engaging users and driving success. Our team of skilled designers and developers collaborate to blend creativity with technical expertise, ensuring that every interaction is meaningful and delightful.',
         imageUrl:'assets/icons/uiTitleImage.png'
     }
     const backEndDev = {
@@ -156,7 +156,7 @@
                         <div class="col-md-12 overlay">
                             <span class="ms-4 ps-2 heading-3-regular fs-3 fs-for-card">{expertiseTitle}</span>
                         </div>
-                        <div class="col-md-4 offset-md-4 footer-fontsize">
+                        <div class="col-md-7 offset-md-3 footer-fontsize">
                             <span class="fs-6">{expertiseData}</span>
                         </div>
                         <!-- <span class="footer-fontsize">{expertiseData}</span> -->
