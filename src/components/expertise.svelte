@@ -43,7 +43,7 @@
 
     }
 
-    let expertiseData = "Demo data for front end development.";
+    let expertiseData = "'Our front-end development services are crafted to transform your ideas into visually stunning, intuitive, and responsive digital solutions.We understand the pivotal role that front-end development plays in captivating users and driving engagement. Our team of skilled developers specializes in crafting pixel-perfect designs and seamless interactions across various platforms and devices.";
     let expertiseTitle = "Frontend Development"
     let imageUrl ="assets/icons/frontEndDevTitleImage.png"
     function loadExpertise(data, title,titleImage) {
