@@ -203,7 +203,7 @@
                         <div class="col-md-12  d-flex justify-content-center ">
                             <span class="fs-6">{expertiseData}</span>
                         </div>
-                        <div class="col-md-12  ">
+                        <!-- <div class="col-md-12  ">
                             <span class="body-1-regular  fs-6 ">
                                 We have 10+ years of experience in developing web
                                 applications that help elevate user's experience
@@ -224,7 +224,7 @@
                                 - Designing and buliding complex applications,
                                   Microservices,Serverless,Distrbuted Services,++
                             </span>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -243,7 +243,7 @@
                         <div class="col-md-12 mt d-flex justify-content-center ">
                             <span class="fs-6">{expertiseData}</span>
                         </div>
-                        <div class="col-md-12 d-flex justify-content-center ">
+                        <!-- <div class="col-md-12 d-flex justify-content-center ">
                             <span class="body-1-regular  fs-6 ">
                                 We have 10+ years of experience in developing web
                                 applications that help elevate user's experience
@@ -263,7 +263,7 @@
                             <p class="body-1-regular fs-6">
                                 - Designing and buliding complex applications,
                                   Microservices,Serverless,Distrbuted Services,++
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
