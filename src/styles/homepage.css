@@ -322,13 +322,16 @@ background-color:white !important ;
         display: block !important;
     }
     .card-font{
-        font-size: 0.7rem !important;
+        font-size: 0.6rem !important;
     }
     
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+    .card-font{
+        font-size: 1rem !important;
+    }
     .display-replacement-card{
         display : none !important
     }
