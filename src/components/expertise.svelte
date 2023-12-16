@@ -241,7 +241,7 @@
                             <span class=" heading-3-regular fs-3 fs-for-card">{expertiseTitle}</span>
                         </div>
                         <div class="col-md-12 mt d-flex justify-content-center ">
-                            <span class="fs-6">{expertiseData}</span>
+                            <span class="fs-6 footer-fontsize">{expertiseData}</span>
                         </div>
                         <!-- <div class="col-md-12 d-flex justify-content-center ">
                             <span class="body-1-regular  fs-6 ">
