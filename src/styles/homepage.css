@@ -321,6 +321,9 @@ background-color:white !important ;
     .hide-nav{
         display: block !important;
     }
+    .card-font{
+        font-size: 0.7rem !important;
+    }
     
 }
 
