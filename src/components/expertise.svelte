@@ -156,7 +156,7 @@
                         <div class="col-md-12 overlay">
                             <span class="ms-4 ps-2 heading-3-regular fs-3 fs-for-card">{expertiseTitle}</span>
                         </div>
-                        <div class="col-md-7 offset-md-3 footer-fontsize">
+                        <div class="col-md-5 offset-md-4 footer-fontsize">
                             <span class="fs-6 card-font">{expertiseData}</span>
                         </div>
                         <!-- <span class="footer-fontsize">{expertiseData}</span> -->
